@@ -1,15 +1,10 @@
 :root {
-  --bg-color: #f2efe9;
-  --text-main: #111111;
-  --text-muted: #555555;
-  --accent-gold: #c28842;
-  --accent-green: #1a5632;
-  --tag-bg: #e5e0d8;
-  --border-color: #e0dad0;
-  
-  --font-serif: 'Instrument Serif', Georgia, serif;
-  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --bg-color: #0f1115;
+  --card-bg: #161920;
+  --text-main: #e2e8f0;
+  --text-muted: #94a3b8;
+  --accent-color: #22c55e;
+  --border-color: #262b36;
 }
 
 * {
@@ -21,254 +16,240 @@
 body {
   background-color: var(--bg-color);
   color: var(--text-main);
-  font-family: var(--font-sans);
+  font-family: 'Plus Jakarta Sans', sans-serif;
   line-height: 1.6;
-  max-width: 680px;
+  padding: 2rem 1rem;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 24px 16px 60px;
 }
 
-/* Header Bar */
+/* Header & Profile */
 .top-bar {
-  padding-bottom: 24px;
   border-bottom: 1px solid var(--border-color);
-  margin-bottom: 32px;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .profile-header {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  align-items: center;
+  gap: 1rem;
 }
 
-/* Profile Picture Styling */
 .profile-img {
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--border-color);
-  margin-bottom: 8px;
+  border: 2px solid var(--accent-color);
 }
 
 .profile-name {
-  font-family: var(--font-serif);
-  font-size: 1.8rem;
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.5rem;
   font-weight: 400;
-  color: var(--text-main);
 }
 
 .profile-degree {
-  font-family: var(--font-mono);
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.85rem;
   color: var(--text-muted);
 }
 
 /* Sections */
 .section {
-  padding: 32px 0;
+  margin-bottom: 3rem;
   border-bottom: 1px solid var(--border-color);
+  padding-bottom: 2.5rem;
 }
 
 .index-tag {
-  font-family: var(--font-mono);
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  color: var(--accent-gold);
-  display: block;
-  margin-bottom: 12px;
-  text-transform: uppercase;
+  color: var(--accent-color);
+  letter-spacing: 1px;
 }
 
-/* Typography */
 .hero-headline {
-  font-family: var(--font-serif);
-  font-size: 2.2rem;
-  font-weight: 400;
-  line-height: 1.15;
-  margin-bottom: 16px;
+  font-family: 'Instrument Serif', serif;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin: 1rem 0;
 }
 
 .hero-description, .section-text {
-  font-size: 0.95rem;
   color: var(--text-muted);
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 
 .section-title {
-  font-family: var(--font-serif);
+  font-family: 'Instrument Serif', serif;
   font-size: 2rem;
-  font-weight: 400;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 
 /* Links */
-.links-row {
+.links-row, .contact-links {
   display: flex;
-  gap: 16px;
   flex-wrap: wrap;
-  margin-top: 20px;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-.editorial-link {
-  font-family: var(--font-mono);
+.editorial-link, .green-link, .mono-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.9rem;
-  color: var(--text-main);
-  text-decoration: underline;
-  text-underline-offset: 4px;
 }
 
-.green-link {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  color: var(--accent-green);
+.editorial-link:hover, .green-link:hover, .mono-link:hover {
   text-decoration: underline;
-  text-underline-offset: 3px;
-  margin-right: 12px;
-}
-
-.mono-link {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  color: var(--accent-green);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  margin-bottom: 8px;
 }
 
 /* Skills */
 .skills-group {
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 
 .group-label {
-  font-family: var(--font-mono);
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.8rem;
-  letter-spacing: 0.05em;
-  color: var(--accent-green);
-  margin-bottom: 8px;
-  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
 }
 
 .skills-list {
   list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .skills-list li {
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  padding: 8px 0;
-  border-bottom: 1px dotted var(--border-color);
-  color: var(--text-muted);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
 }
 
-/* Projects Card */
+/* Project Cards */
 .project-card {
-  background-color: rgba(255, 255, 255, 0.3);
+  background: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 6px;
-  padding: 16px;
-  margin-bottom: 24px;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .project-image-box {
-  width: 100%;
-  height: 160px;
-  border: 1px solid var(--border-color);
+  background: #090a0f;
+  border: 1px dashed var(--border-color);
+  padding: 2rem;
+  text-align: center;
   border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--bg-color);
   color: var(--text-muted);
   font-size: 0.85rem;
-  text-align: center;
-  padding: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 
 .project-title {
-  font-family: var(--font-serif);
-  font-size: 1.4rem;
-  font-weight: 400;
-  margin-bottom: 8px;
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .project-desc {
-  font-size: 0.88rem;
   color: var(--text-muted);
-  margin-bottom: 12px;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
 }
 
 .tech-tags {
   display: flex;
-  gap: 8px;
-  margin-bottom: 12px;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .tech-tag {
-  font-family: var(--font-mono);
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.75rem;
-  background-color: var(--tag-bg);
-  color: var(--accent-gold);
-  padding: 2px 8px;
-  border-radius: 3px;
+  background: #1f2430;
+  color: var(--accent-color);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
 }
 
-/* Experience & Timeline */
-.timeline {
-  border-left: 2px solid var(--border-color);
-  padding-left: 16px;
-  margin-left: 4px;
-  margin-bottom: 20px;
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
 }
 
+.page-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--text-main);
+  text-decoration: none;
+  background: var(--card-bg);
+  transition: all 0.2s ease;
+}
+
+.page-link:hover:not(.disabled):not(.active) {
+  background-color: var(--accent-color);
+  color: #000;
+}
+
+.page-link.active {
+  background-color: var(--accent-color);
+  color: #000;
+  border-color: var(--accent-color);
+  font-weight: 600;
+}
+
+.page-link.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Timeline */
 .timeline-item {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -21px;
-  top: 6px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--accent-gold);
+  margin-bottom: 1.5rem;
 }
 
 .timeline-date {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  display: block;
-  margin-bottom: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--accent-color);
 }
 
 .timeline-role {
-  font-family: var(--font-serif);
   font-size: 1.1rem;
-  font-weight: 600;
+  margin: 0.2rem 0;
 }
 
 .timeline-org {
   font-size: 0.85rem;
-  color: var(--accent-green);
-  margin-bottom: 6px;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
 }
 
 .timeline-text {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
 }
 
-/* Footer */
 footer {
-  padding-top: 32px;
-  font-family: var(--font-mono);
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
   font-size: 0.8rem;
   color: var(--text-muted);
+  padding: 2rem 0;
 }

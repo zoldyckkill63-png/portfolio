@@ -41,10 +41,14 @@ body {
   gap: 8px;
 }
 
-.avatar-placeholder {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  color: var(--text-muted);
+/* Profile Picture Styling */
+.profile-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-color);
+  margin-bottom: 8px;
 }
 
 .profile-name {

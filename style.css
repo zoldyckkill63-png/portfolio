@@ -206,11 +206,12 @@ body {
 
 .project-img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
   border-radius: 6px;
   border: 1px solid var(--border-color);
   margin-bottom: 16px;
+  display: block;
 }
 
 .project-title {
@@ -231,6 +232,7 @@ body {
   display: flex;
   gap: 8px;
   margin-bottom: 14px;
+  flex-wrap: wrap;
 }
 
 .tech-tag {

@@ -1,11 +1,13 @@
 :root {
-  --bg-color: #f2efe9;
-  --text-main: #111111;
-  --text-muted: #555555;
-  --accent-gold: #c28842;
-  --accent-green: #1a5632;
-  --tag-bg: #e5e0d8;
-  --border-color: #e0dad0;
+  --bg-color: #0d1117;
+  --card-bg: #161b22;
+  --text-main: #f0f6fc;
+  --text-muted: #8b949e;
+  --accent-neon: #58a6ff;
+  --accent-gold: #f0883e;
+  --accent-green: #3fb950;
+  --tag-bg: #21262d;
+  --border-color: #30363d;
   
   --font-serif: 'Instrument Serif', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
@@ -23,30 +25,32 @@ body {
   color: var(--text-main);
   font-family: var(--font-sans);
   line-height: 1.6;
-  max-width: 680px;
+  max-width: 720px;
   margin: 0 auto;
-  padding: 24px 16px 60px;
+  padding: 32px 20px 80px;
 }
 
 /* Header Bar */
 .top-bar {
-  padding-bottom: 24px;
+  padding-bottom: 28px;
   border-bottom: 1px solid var(--border-color);
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
 
 .profile-header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
 }
 
 .profile-img {
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   object-fit: cover;
+  border: 2px solid var(--accent-neon);
+  box-shadow: 0 0 12px rgba(88, 166, 255, 0.3);
   flex-shrink: 0;
 }
 
@@ -55,15 +59,9 @@ body {
   flex-direction: column;
 }
 
-.avatar-placeholder {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  color: var(--text-muted);
-}
-
 .profile-name {
   font-family: var(--font-serif);
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 400;
   color: var(--text-main);
   line-height: 1.2;
@@ -72,19 +70,20 @@ body {
 .profile-degree {
   font-family: var(--font-mono);
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: var(--accent-neon);
+  margin-top: 4px;
 }
 
 /* Sections */
 .section {
-  padding: 32px 0;
+  padding: 36px 0;
   border-bottom: 1px solid var(--border-color);
 }
 
 .index-tag {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: var(--accent-gold);
   display: block;
   margin-bottom: 12px;
@@ -94,10 +93,11 @@ body {
 /* Typography */
 .hero-headline {
   font-family: var(--font-serif);
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   font-weight: 400;
-  line-height: 1.15;
+  line-height: 1.2;
   margin-bottom: 16px;
+  color: #ffffff;
 }
 
 .hero-description, .section-text {
@@ -108,57 +108,73 @@ body {
 
 .section-title {
   font-family: var(--font-serif);
-  font-size: 2rem;
+  font-size: 2.1rem;
   font-weight: 400;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  color: #ffffff;
 }
 
 /* Links */
 .links-row {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 24px;
 }
 
 .editorial-link {
   font-family: var(--font-mono);
   font-size: 0.9rem;
-  color: var(--text-main);
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  color: var(--accent-neon);
+  text-decoration: none;
+  padding: 6px 14px;
+  background-color: var(--tag-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.editorial-link:hover {
+  border-color: var(--accent-neon);
+  box-shadow: 0 0 8px rgba(88, 166, 255, 0.2);
 }
 
 .green-link {
   font-family: var(--font-mono);
   font-size: 0.85rem;
   color: var(--accent-green);
+  text-decoration: none;
+  margin-right: 16px;
+}
+
+.green-link:hover {
   text-decoration: underline;
-  text-underline-offset: 3px;
-  margin-right: 12px;
 }
 
 .mono-link {
   display: block;
   font-family: var(--font-mono);
   font-size: 0.9rem;
-  color: var(--accent-green);
+  color: var(--accent-neon);
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.mono-link:hover {
   text-decoration: underline;
-  text-underline-offset: 4px;
-  margin-bottom: 8px;
 }
 
 /* Skills */
 .skills-group {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .group-label {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   color: var(--accent-green);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   font-weight: 600;
 }
 
@@ -176,18 +192,23 @@ body {
 
 /* Projects Card */
 .project-card {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 6px;
-  padding: 16px;
+  border-radius: 8px;
+  padding: 20px;
   margin-bottom: 24px;
+  transition: border-color 0.2s ease;
+}
+
+.project-card:hover {
+  border-color: var(--accent-neon);
 }
 
 .project-image-box {
   width: 100%;
-  height: 160px;
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
+  height: 150px;
+  border: 1px dashed var(--border-color);
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -201,21 +222,22 @@ body {
 
 .project-title {
   font-family: var(--font-serif);
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 8px;
+  color: #ffffff;
 }
 
 .project-desc {
   font-size: 0.88rem;
   color: var(--text-muted);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .tech-tags {
   display: flex;
   gap: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .tech-tag {
@@ -223,32 +245,34 @@ body {
   font-size: 0.75rem;
   background-color: var(--tag-bg);
   color: var(--accent-gold);
-  padding: 2px 8px;
-  border-radius: 3px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
 }
 
 /* Experience & Timeline */
 .timeline {
   border-left: 2px solid var(--border-color);
-  padding-left: 16px;
+  padding-left: 18px;
   margin-left: 4px;
   margin-bottom: 20px;
 }
 
 .timeline-item {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: -21px;
+  left: -23px;
   top: 6px;
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--accent-gold);
+  background-color: var(--accent-neon);
+  box-shadow: 0 0 6px var(--accent-neon);
 }
 
 .timeline-date {
@@ -261,8 +285,9 @@ body {
 
 .timeline-role {
   font-family: var(--font-serif);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
+  color: #ffffff;
 }
 
 .timeline-org {
@@ -278,8 +303,9 @@ body {
 
 /* Footer */
 footer {
-  padding-top: 32px;
+  padding-top: 40px;
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--text-muted);
+  text-align: center;
 }

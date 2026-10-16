@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mark Louie B. Cebreros - IT Student Portfolio</title>
   
-  <!-- Modern Fonts -->
+  <!-- Modern Fonts & Devicon Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -28,9 +29,7 @@
       
       <!-- Interactive Theme Toggle Button -->
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode" title="Toggle Dark/Light Mode">
-        <!-- Moon Icon (Default Mode) -->
         <svg class="moon-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-        <!-- Sun Icon (Active in Dark Mode) -->
         <svg class="sun-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
       </button>
     </div>
@@ -39,7 +38,7 @@
   <!-- Main Landscape Container -->
   <div class="site-wrapper">
 
-    <!-- Hero Section (Split Screen Landscape Layout) -->
+    <!-- Hero Section -->
     <section class="hero-section">
       <div class="hero-image-wrapper">
         <div class="profile-circle-container">
@@ -54,15 +53,31 @@
           I am a 3rd-year Information Technology student focusing on core software development, web technologies, and version control workflows. I am looking to build practical technical experience through developer internships and collaborative software projects.
         </p>
 
-        <!-- Tech Stack Icons / Tags -->
-        <div class="hero-tech-row">
-          <span class="tech-badge">HTML5</span>
-          <span class="tech-badge">CSS3</span>
-          <span class="tech-badge">JavaScript</span>
-          <span class="tech-badge">PHP</span>
-          <span class="tech-badge">SQL</span>
-          <span class="tech-badge">Git</span>
-          <span class="tech-badge">VS Code</span>
+        <!-- Continuous Straight-Line Moving Tech Logos -->
+        <div class="marquee-container">
+          <div class="marquee-track">
+            <!-- First Set of Logos -->
+            <div class="tech-icon-item" title="HTML5"><i class="devicon-html5-plain colored"></i></div>
+            <div class="tech-icon-item" title="CSS3"><i class="devicon-css3-plain colored"></i></div>
+            <div class="tech-icon-item" title="JavaScript"><i class="devicon-javascript-plain colored"></i></div>
+            <div class="tech-icon-item" title="PHP"><i class="devicon-php-plain colored"></i></div>
+            <div class="tech-icon-item" title="MySQL"><i class="devicon-mysql-original colored"></i></div>
+            <div class="tech-icon-item" title="Git"><i class="devicon-git-plain colored"></i></div>
+            <div class="tech-icon-item" title="VS Code"><i class="devicon-vscode-plain colored"></i></div>
+            <div class="tech-icon-item" title="React"><i class="devicon-react-original colored"></i></div>
+            <div class="tech-icon-item" title="Node.js"><i class="devicon-nodejs-plain-wordmark colored"></i></div>
+            
+            <!-- Duplicated Set for Seamless Infinite Loop -->
+            <div class="tech-icon-item" title="HTML5"><i class="devicon-html5-plain colored"></i></div>
+            <div class="tech-icon-item" title="CSS3"><i class="devicon-css3-plain colored"></i></div>
+            <div class="tech-icon-item" title="JavaScript"><i class="devicon-javascript-plain colored"></i></div>
+            <div class="tech-icon-item" title="PHP"><i class="devicon-php-plain colored"></i></div>
+            <div class="tech-icon-item" title="MySQL"><i class="devicon-mysql-original colored"></i></div>
+            <div class="tech-icon-item" title="Git"><i class="devicon-git-plain colored"></i></div>
+            <div class="tech-icon-item" title="VS Code"><i class="devicon-vscode-plain colored"></i></div>
+            <div class="tech-icon-item" title="React"><i class="devicon-react-original colored"></i></div>
+            <div class="tech-icon-item" title="Node.js"><i class="devicon-nodejs-plain-wordmark colored"></i></div>
+          </div>
         </div>
 
         <p class="hero-tagline">I'm an <span class="highlight-role">IT Undergraduate Student</span></p>
@@ -139,7 +154,7 @@
         </div>
 
         <div class="project-item-card">
-          <img src="project2.jpg" alt="Portfolio Website" class="proj-img" />
+          <img src="project2.jpg" alt="Portfolio Website" class="project-img" />
           <div class="proj-info">
             <h3>Portfolio Website</h3>
             <p>A minimalist editorial-style portfolio showcasing clean layout architecture, entrance CSS animations, and high performance across all mobile viewports.</p>

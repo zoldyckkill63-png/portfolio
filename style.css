@@ -104,7 +104,6 @@ body {
   color: var(--text-main);
 }
 
-/* Interactive Theme Toggle Button */
 .theme-toggle {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
@@ -139,7 +138,7 @@ body.dark-mode .sun-icon {
 }
 
 /* ==========================================================================
-   3. SITE CONTAINER & HERO SPLIT SCREEN
+   3. SITE CONTAINER & HERO SECTION
    ========================================================================== */
 .site-wrapper {
   max-width: var(--max-width);
@@ -197,6 +196,7 @@ body.dark-mode .sun-icon {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden; /* Prevents logo overflow */
 }
 
 .hero-title {
@@ -215,21 +215,56 @@ body.dark-mode .sun-icon {
   margin-bottom: 18px;
 }
 
-.hero-tech-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 16px;
+/* ==========================================================================
+   4. STRAIGHT-LINE MOVING LOGO MARQUEE ANIMATION
+   ========================================================================== */
+.marquee-container {
+  width: 100%;
+  max-width: 520px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-.tech-badge {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
+.marquee-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: scrollMarquee 18s linear infinite;
+}
+
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused; /* Pauses on hover for interactivity */
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.tech-icon-item {
+  width: 44px;
+  height: 44px;
   background: var(--card-bg);
   border: 1px solid var(--border-color);
-  padding: 4px 8px;
-  border-radius: 4px;
-  color: var(--text-muted);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tech-icon-item:hover {
+  transform: scale(1.15);
+  border-color: var(--role-color);
 }
 
 .hero-tagline {
@@ -250,7 +285,7 @@ body.dark-mode .sun-icon {
 }
 
 /* ==========================================================================
-   4. BUTTONS
+   5. BUTTONS
    ========================================================================== */
 .btn {
   font-family: var(--font-sans);
@@ -297,7 +332,7 @@ body.dark-mode .sun-icon {
 }
 
 /* ==========================================================================
-   5. CONTENT SECTIONS & HEADINGS
+   6. CONTENT SECTIONS & HEADINGS
    ========================================================================== */
 .content-section {
   padding: 48px 0;
@@ -331,7 +366,7 @@ body.dark-mode .sun-icon {
 }
 
 /* ==========================================================================
-   6. SKILLS GRID (WIDE)
+   7. SKILLS GRID
    ========================================================================== */
 .skills-grid-wide {
   display: grid;
@@ -369,7 +404,7 @@ body.dark-mode .sun-icon {
 }
 
 /* ==========================================================================
-   7. PROJECTS GRID (LANDSCAPE)
+   8. PROJECTS GRID
    ========================================================================== */
 .projects-grid-landscape {
   display: grid;
@@ -448,7 +483,7 @@ body.dark-mode .sun-icon {
 }
 
 /* ==========================================================================
-   8. EXPERIENCE & EDUCATION GRID
+   9. EXPERIENCE & EDUCATION
    ========================================================================== */
 .experience-grid-wide {
   display: grid;
@@ -498,7 +533,7 @@ body.dark-mode .sun-icon {
 }
 
 /* ==========================================================================
-   9. CONTACT & FOOTER
+   10. CONTACT & FOOTER
    ========================================================================== */
 .contact-links-row {
   display: flex;
@@ -516,11 +551,11 @@ body.dark-mode .sun-icon {
 }
 
 /* ==========================================================================
-   10. MOBILE & TABLET RESPONSIVE MEDIA QUERIES
+   11. RESPONSIVE MEDIA QUERIES
    ========================================================================== */
 @media (max-width: 900px) {
   .nav-links {
-    display: none; /* Hide header text links on smaller screens for clean layout */
+    display: none;
   }
 
   .nav-container {
@@ -552,18 +587,11 @@ body.dark-mode .sun-icon {
     height: 180px;
   }
 
-  .status-dot {
-    bottom: 22px;
-    right: 35px;
-    width: 14px;
-    height: 14px;
+  .marquee-container {
+    margin: 0 auto 20px;
   }
 
-  .hero-title {
-    font-size: 1.85rem;
-  }
-
-  .hero-tech-row, .hero-actions {
+  .hero-actions {
     justify-content: center;
   }
 
@@ -572,9 +600,5 @@ body.dark-mode .sun-icon {
   .experience-grid-wide {
     grid-template-columns: 1fr;
     gap: 16px;
-  }
-
-  .section-heading h2 {
-    font-size: 1.35rem;
   }
 }

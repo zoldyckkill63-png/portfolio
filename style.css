@@ -486,7 +486,7 @@ body.dark-mode .sun-icon { display: block; color: #fbbf24; }
 }
 .skills-bullet-list li:last-child { border-bottom: none; }
 
-/* Projects Grid (Handles 3 items neatly: 2 columns on desktop) */
+/* Projects Grid */
 .projects-grid-landscape {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

@@ -15,10 +15,10 @@
 </head>
 <body>
 
-  <!-- Loading Screen (Guaranteed Safe Fade Out) -->
+  <!-- Loading Screen with Bold Bouncing Text -->
   <div id="page-loader" class="loader-wrapper">
     <div class="loader-content">
-      <p class="loader-text">Loading Portfolio...</p>
+      <p class="loader-text">LOADING PORTFOLIO...</p>
       <div class="loader-bar-container">
         <div class="loader-bar-fill"></div>
       </div>
@@ -240,7 +240,6 @@
 
   <!-- JavaScript for Safe Loader, Tabs, Dark Mode, & Typing -->
   <script>
-    // Bulletproof loader fade-out logic
     window.addEventListener('load', () => {
       const loader = document.getElementById('page-loader');
       setTimeout(() => {
@@ -248,7 +247,6 @@
       }, 300);
     });
 
-    // Failsafe timer: ensures loader disappears even if window load event is delayed
     setTimeout(() => {
       const loader = document.getElementById('page-loader');
       if (loader && !loader.classList.contains('loader-hidden')) {

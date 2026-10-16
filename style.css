@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. DESIGN SYSTEM & BASE
+   1. DESIGN SYSTEM & INTER FONT BASE
    ========================================================================== */
 :root {
   --bg-main: #ffffff;
@@ -13,7 +13,7 @@
   --role-color: #2563eb;
   --badge-bg: #ffffff;
 
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'Space Grotesk', monospace;
   --max-width: 1100px;
 }
@@ -61,7 +61,7 @@ body {
 }
 
 /* ==========================================================================
-   2. LOADING SCREEN (OPTION 1: MINIMALIST TERMINAL LINE)
+   2. FRAMER MOTION LOADING SCREEN (TERMINAL LINE STYLE)
    ========================================================================== */
 .loader-wrapper {
   position: fixed;
@@ -74,13 +74,6 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
-}
-
-.loader-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
 }
 
 .loader-content {
@@ -117,12 +110,8 @@ body {
 }
 
 @keyframes terminalSlide {
-  0% {
-    left: -40%;
-  }
-  100% {
-    left: 100%;
-  }
+  0% { left: -40%; }
+  100% { left: 100%; }
 }
 
 /* ==========================================================================
@@ -246,14 +235,8 @@ body.dark-mode .sun-icon { display: block; color: #fbbf24; }
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ==========================================================================
@@ -664,4 +647,4 @@ body.dark-mode .sun-icon { display: block; color: #fbbf24; }
     grid-template-columns: 1fr;
     gap: 20px;
   }
-}
+} 

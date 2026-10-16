@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>Mark Louie B. Cebreros - IT Student Portfolio</title>
   
   <!-- Modern Fonts & Devicon Icons -->
@@ -20,14 +20,16 @@
     <div class="nav-container">
       <a href="javascript:void(0)" class="nav-logo tab-link active" data-tab="home">Portfolio</a>
       
-      <ul class="nav-links">
-        <li><a href="javascript:void(0)" class="tab-link active" data-tab="home">Home</a></li>
-        <li><a href="javascript:void(0)" class="tab-link" data-tab="about">About</a></li>
-        <li><a href="javascript:void(0)" class="tab-link" data-tab="skills">Skills</a></li>
-        <li><a href="javascript:void(0)" class="tab-link" data-tab="projects">Projects</a></li>
-        <li><a href="javascript:void(0)" class="tab-link" data-tab="experience">Experience</a></li>
-        <li><a href="javascript:void(0)" class="tab-link" data-tab="contact">Contact</a></li>
-      </ul>
+      <div class="nav-links-wrapper">
+        <ul class="nav-links">
+          <li><a href="javascript:void(0)" class="tab-link active" data-tab="home">Home</a></li>
+          <li><a href="javascript:void(0)" class="tab-link" data-tab="about">About</a></li>
+          <li><a href="javascript:void(0)" class="tab-link" data-tab="skills">Skills</a></li>
+          <li><a href="javascript:void(0)" class="tab-link" data-tab="projects">Projects</a></li>
+          <li><a href="javascript:void(0)" class="tab-link" data-tab="experience">Experience</a></li>
+          <li><a href="javascript:void(0)" class="tab-link" data-tab="contact">Contact</a></li>
+        </ul>
+      </div>
       
       <!-- Interactive Theme Toggle Button -->
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode" title="Toggle Dark/Light Mode">
@@ -82,7 +84,8 @@
             </div>
           </div>
 
-          <p class="hero-tagline">I'm an <span class="highlight-role">IT Undergraduate Student</span></p>
+          <!-- Typing Animation Element -->
+          <p class="hero-tagline">I'm <span id="typing-text" class="highlight-role"></span><span class="typing-cursor">|</span></p>
 
           <div class="hero-actions">
             <button class="btn btn-primary tab-link" data-tab="projects">View Projects</button>
@@ -227,7 +230,7 @@
 
   </div>
 
-  <!-- JavaScript for Tab Switching & Theme Toggle -->
+  <!-- JavaScript for Tab Switching, Dark Mode, and Typing Animation -->
   <script>
     // Tab Navigation Logic
     const tabLinks = document.querySelectorAll('.tab-link');
@@ -237,11 +240,9 @@
       link.addEventListener('click', () => {
         const targetTab = link.getAttribute('data-tab');
 
-        // Remove active class from all links & tabs
         tabLinks.forEach(item => item.classList.remove('active'));
         tabContents.forEach(tab => tab.classList.remove('active'));
 
-        // Activate matching links and tab content
         document.querySelectorAll(`.tab-link[data-tab="${targetTab}"]`).forEach(item => {
           item.classList.add('active');
         });
@@ -251,7 +252,6 @@
           activeContent.classList.add('active');
         }
 
-        // Scroll cleanly to top when changing tabs
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
@@ -272,6 +272,46 @@
       }
       localStorage.setItem('theme', theme);
     });
+
+    // Dynamic Typing Effect Animation
+    const phrases = [
+      " an IT Undergraduate Student",
+      " a Web Developer",
+      " a Problem Solver",
+      " an IT Specialization Student"
+    ];
+
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingElement = document.getElementById('typing-text');
+
+    function typeEffect() {
+      const currentPhrase = phrases[phraseIndex];
+      
+      if (isDeleting) {
+        typingElement.textContent = currentPhrase.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typingElement.textContent = currentPhrase.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      let typingSpeed = isDeleting ? 40 : 80;
+
+      if (!isDeleting && charIndex === currentPhrase.length) {
+        typingSpeed = 2000; // Pause at end of phrase
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        typingSpeed = 500; // Pause before typing next phrase
+      }
+
+      setTimeout(typeEffect, typingSpeed);
+    }
+
+    document.addEventListener('DOMContentLoaded', typeEffect);
   </script>
 
 </body>

@@ -18,13 +18,15 @@
   <!-- Top Sticky Navbar -->
   <nav class="top-navbar">
     <div class="nav-container">
-      <a href="#" class="nav-logo">Portfolio</a>
+      <a href="javascript:void(0)" class="nav-logo tab-link active" data-tab="home">Portfolio</a>
+      
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience-education">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="javascript:void(0)" class="tab-link active" data-tab="home">Home</a></li>
+        <li><a href="javascript:void(0)" class="tab-link" data-tab="about">About</a></li>
+        <li><a href="javascript:void(0)" class="tab-link" data-tab="skills">Skills</a></li>
+        <li><a href="javascript:void(0)" class="tab-link" data-tab="projects">Projects</a></li>
+        <li><a href="javascript:void(0)" class="tab-link" data-tab="experience">Experience</a></li>
+        <li><a href="javascript:void(0)" class="tab-link" data-tab="contact">Contact</a></li>
       </ul>
       
       <!-- Interactive Theme Toggle Button -->
@@ -35,75 +37,78 @@
     </div>
   </nav>
 
-  <!-- Main Landscape Container -->
+  <!-- Main Container Wrapper -->
   <div class="site-wrapper">
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-image-wrapper">
-        <div class="profile-circle-container">
-          <img src="profile.jpg" alt="Mark Louie B. Cebreros" class="profile-img" />
-          <span class="status-dot"></span>
-        </div>
-      </div>
-      
-      <div class="hero-content">
-        <h1 class="hero-title">Hi, I'm Mark Louie B. Cebreros</h1>
-        <p class="hero-lead">
-          I am a 3rd-year Information Technology student focusing on core software development, web technologies, and version control workflows. I am looking to build practical technical experience through developer internships and collaborative software projects.
-        </p>
-
-        <!-- Clean Horizontal Straight-Line Moving Marquee -->
-        <div class="marquee-container">
-          <div class="marquee-track">
-            <!-- Set 1 -->
-            <div class="tech-icon-item" title="HTML5"><i class="devicon-html5-plain colored"></i></div>
-            <div class="tech-icon-item" title="CSS3"><i class="devicon-css3-plain colored"></i></div>
-            <div class="tech-icon-item" title="JavaScript"><i class="devicon-javascript-plain colored"></i></div>
-            <div class="tech-icon-item" title="PHP"><i class="devicon-php-plain colored"></i></div>
-            <div class="tech-icon-item" title="MySQL"><i class="devicon-mysql-original colored"></i></div>
-            <div class="tech-icon-item" title="Git"><i class="devicon-git-plain colored"></i></div>
-            <div class="tech-icon-item" title="VS Code"><i class="devicon-vscode-plain colored"></i></div>
-            <div class="tech-icon-item" title="React"><i class="devicon-react-original colored"></i></div>
-            <div class="tech-icon-item" title="Node.js"><i class="devicon-nodejs-plain-wordmark colored"></i></div>
-            
-            <!-- Set 2 (Duplicates for smooth loop) -->
-            <div class="tech-icon-item" title="HTML5"><i class="devicon-html5-plain colored"></i></div>
-            <div class="tech-icon-item" title="CSS3"><i class="devicon-css3-plain colored"></i></div>
-            <div class="tech-icon-item" title="JavaScript"><i class="devicon-javascript-plain colored"></i></div>
-            <div class="tech-icon-item" title="PHP"><i class="devicon-php-plain colored"></i></div>
-            <div class="tech-icon-item" title="MySQL"><i class="devicon-mysql-original colored"></i></div>
-            <div class="tech-icon-item" title="Git"><i class="devicon-git-plain colored"></i></div>
-            <div class="tech-icon-item" title="VS Code"><i class="devicon-vscode-plain colored"></i></div>
-            <div class="tech-icon-item" title="React"><i class="devicon-react-original colored"></i></div>
-            <div class="tech-icon-item" title="Node.js"><i class="devicon-nodejs-plain-wordmark colored"></i></div>
+    <!-- TAB 1: HOME PAGE -->
+    <section id="home" class="tab-content active">
+      <div class="hero-section">
+        <div class="hero-image-wrapper">
+          <div class="profile-circle-container">
+            <img src="profile.jpg" alt="Mark Louie B. Cebreros" class="profile-img" />
+            <span class="status-dot"></span>
           </div>
         </div>
+        
+        <div class="hero-content">
+          <h1 class="hero-title">Hi, I'm Mark Louie B. Cebreros</h1>
+          <p class="hero-lead">
+            I am a 3rd-year Information Technology student focusing on core software development, web technologies, and version control workflows. I am looking to build practical technical experience through developer internships and collaborative software projects.
+          </p>
 
-        <p class="hero-tagline">I'm an <span class="highlight-role">IT Undergraduate Student</span></p>
+          <!-- Moving Marquee -->
+          <div class="marquee-container">
+            <div class="marquee-track">
+              <div class="tech-icon-item" title="HTML5"><i class="devicon-html5-plain colored"></i></div>
+              <div class="tech-icon-item" title="CSS3"><i class="devicon-css3-plain colored"></i></div>
+              <div class="tech-icon-item" title="JavaScript"><i class="devicon-javascript-plain colored"></i></div>
+              <div class="tech-icon-item" title="PHP"><i class="devicon-php-plain colored"></i></div>
+              <div class="tech-icon-item" title="MySQL"><i class="devicon-mysql-original colored"></i></div>
+              <div class="tech-icon-item" title="Git"><i class="devicon-git-plain colored"></i></div>
+              <div class="tech-icon-item" title="VS Code"><i class="devicon-vscode-plain colored"></i></div>
+              <div class="tech-icon-item" title="React"><i class="devicon-react-original colored"></i></div>
+              <div class="tech-icon-item" title="Node.js"><i class="devicon-nodejs-plain-wordmark colored"></i></div>
+              
+              <!-- Duplicated set for seamless loop -->
+              <div class="tech-icon-item" title="HTML5"><i class="devicon-html5-plain colored"></i></div>
+              <div class="tech-icon-item" title="CSS3"><i class="devicon-css3-plain colored"></i></div>
+              <div class="tech-icon-item" title="JavaScript"><i class="devicon-javascript-plain colored"></i></div>
+              <div class="tech-icon-item" title="PHP"><i class="devicon-php-plain colored"></i></div>
+              <div class="tech-icon-item" title="MySQL"><i class="devicon-mysql-original colored"></i></div>
+              <div class="tech-icon-item" title="Git"><i class="devicon-git-plain colored"></i></div>
+              <div class="tech-icon-item" title="VS Code"><i class="devicon-vscode-plain colored"></i></div>
+              <div class="tech-icon-item" title="React"><i class="devicon-react-original colored"></i></div>
+              <div class="tech-icon-item" title="Node.js"><i class="devicon-nodejs-plain-wordmark colored"></i></div>
+            </div>
+          </div>
 
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="#" class="btn btn-secondary">Resume</a>
-          <a href="https://github.com" target="_blank" class="btn btn-outline">GitHub</a>
-          <a href="https://linkedin.com" target="_blank" class="btn btn-outline">LinkedIn</a>
+          <p class="hero-tagline">I'm an <span class="highlight-role">IT Undergraduate Student</span></p>
+
+          <div class="hero-actions">
+            <button class="btn btn-primary tab-link" data-tab="projects">View Projects</button>
+            <a href="#" class="btn btn-secondary">Resume</a>
+            <a href="https://github.com" target="_blank" class="btn btn-outline">GitHub</a>
+            <a href="https://linkedin.com" target="_blank" class="btn btn-outline">LinkedIn</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="content-section">
+    <!-- TAB 2: ABOUT PAGE -->
+    <section id="about" class="tab-content">
       <div class="section-heading">
-        <h2>About</h2>
+        <h2>About Me</h2>
         <div class="heading-line"></div>
       </div>
-      <p class="section-desc">
-        Driven by a passion for clean system architectures and modern UI development. I constantly refine my skills in front-end aesthetics, back-end logic, and git workflows.
-      </p>
+      <div class="content-box">
+        <p class="section-desc">
+          Driven by a passion for clean system architectures and modern UI development. I constantly refine my skills in front-end aesthetics, back-end logic, and git workflows.
+        </p>
+      </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="content-section">
+    <!-- TAB 3: SKILLS PAGE -->
+    <section id="skills" class="tab-content">
       <div class="section-heading">
         <h2>Technical Skills</h2>
         <div class="heading-line"></div>
@@ -130,15 +135,14 @@
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="content-section">
+    <!-- TAB 4: PROJECTS PAGE -->
+    <section id="projects" class="tab-content">
       <div class="section-heading">
         <h2>Featured Projects</h2>
         <div class="heading-line"></div>
       </div>
 
       <div class="projects-grid-landscape">
-        
         <div class="project-item-card">
           <img src="project1.jpg" alt="Task Master Application" class="proj-img" />
           <div class="proj-info">
@@ -165,12 +169,11 @@
             <a href="#" class="text-link">View Live Project →</a>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- Experience & Education Section -->
-    <section id="experience-education" class="content-section">
+    <!-- TAB 5: EXPERIENCE PAGE -->
+    <section id="experience" class="tab-content">
       <div class="section-heading">
         <h2>Experience & Education</h2>
         <div class="heading-line"></div>
@@ -199,19 +202,21 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="content-section">
+    <!-- TAB 6: CONTACT PAGE -->
+    <section id="contact" class="tab-content">
       <div class="section-heading">
         <h2>Get in Touch</h2>
         <div class="heading-line"></div>
       </div>
-      <p class="section-desc">
-        Interested in collaborating on web development projects or entry-level opportunities? Feel free to send an email or connect online.
-      </p>
-      <div class="contact-links-row">
-        <a href="mailto:your-email@example.com" class="btn btn-primary">Email Me</a>
-        <a href="https://github.com" target="_blank" class="btn btn-outline">GitHub</a>
-        <a href="https://linkedin.com" target="_blank" class="btn btn-outline">LinkedIn</a>
+      <div class="content-box">
+        <p class="section-desc">
+          Interested in collaborating on web development projects or entry-level opportunities? Feel free to send an email or connect online.
+        </p>
+        <div class="contact-links-row">
+          <a href="mailto:your-email@example.com" class="btn btn-primary">Email Me</a>
+          <a href="https://github.com" target="_blank" class="btn btn-outline">GitHub</a>
+          <a href="https://linkedin.com" target="_blank" class="btn btn-outline">LinkedIn</a>
+        </div>
       </div>
     </section>
 
@@ -222,8 +227,36 @@
 
   </div>
 
-  <!-- JavaScript for Interactive Theme Toggle -->
+  <!-- JavaScript for Tab Switching & Theme Toggle -->
   <script>
+    // Tab Navigation Logic
+    const tabLinks = document.querySelectorAll('.tab-link');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const targetTab = link.getAttribute('data-tab');
+
+        // Remove active class from all links & tabs
+        tabLinks.forEach(item => item.classList.remove('active'));
+        tabContents.forEach(tab => tab.classList.remove('active'));
+
+        // Activate matching links and tab content
+        document.querySelectorAll(`.tab-link[data-tab="${targetTab}"]`).forEach(item => {
+          item.classList.add('active');
+        });
+
+        const activeContent = document.getElementById(targetTab);
+        if (activeContent) {
+          activeContent.classList.add('active');
+        }
+
+        // Scroll cleanly to top when changing tabs
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+
+    // Dark Mode Toggle Logic
     const themeToggleBtn = document.getElementById('themeToggle');
     const currentTheme = localStorage.getItem('theme');
 

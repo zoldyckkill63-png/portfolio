@@ -15,11 +15,13 @@
 </head>
 <body>
 
-  <!-- Loading Screen (Option 2: Pulsing Brand Initials) -->
+  <!-- Loading Screen (Option 1: Minimalist Terminal Line) -->
   <div id="page-loader" class="loader-wrapper">
     <div class="loader-content">
-      <div class="loader-logo-pulse">MC</div>
-      <p class="loader-text">Initializing...</p>
+      <p class="loader-text">Loading Portfolio...</p>
+      <div class="loader-bar-container">
+        <div class="loader-bar-fill"></div>
+      </div>
     </div>
   </div>
 
@@ -242,7 +244,7 @@
       const loader = document.getElementById('page-loader');
       setTimeout(() => {
         loader.classList.add('loader-hidden');
-      }, 500);
+      }, 400);
     });
 
     const tabLinks = document.querySelectorAll('.tab-link');

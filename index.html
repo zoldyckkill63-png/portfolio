@@ -15,26 +15,24 @@
 </head>
 <body>
 
-  <!-- Top Sticky Navbar -->
+  <!-- Top Sticky Navbar (Exact Reference Alignment) -->
   <nav class="top-navbar">
     <div class="nav-container">
       <a href="javascript:void(0)" class="nav-logo tab-link active" data-tab="home">Portfolio</a>
       
-      <div class="nav-links-wrapper">
-        <ul class="nav-links">
-          <li><a href="javascript:void(0)" class="tab-link active" data-tab="home">Home</a></li>
-          <li><a href="javascript:void(0)" class="tab-link" data-tab="about">About</a></li>
-          <li><a href="javascript:void(0)" class="tab-link" data-tab="skills">Skills</a></li>
-          <li><a href="javascript:void(0)" class="tab-link" data-tab="projects">Projects</a></li>
-          <li><a href="javascript:void(0)" class="tab-link" data-tab="experience">Experience</a></li>
-          <li><a href="javascript:void(0)" class="tab-link" data-tab="contact">Contact</a></li>
-        </ul>
-      </div>
+      <ul class="nav-links">
+        <li><a href="javascript:void(0)" class="tab-link active" data-tab="home">Home</a></li>
+        <li><a href="javascript:void(0)" class="tab-link" data-tab="about">About</a></li>
+        <li><a href="javascript:void(0)" class="tab-link" data-tab="skills">Skills</a></li>
+        <li><a href="javascript:void(0)" class="tab-link" data-tab="projects">Projects</a></li>
+        <li><a href="javascript:void(0)" class="tab-link" data-tab="experience">Experience</a></li>
+        <li><a href="javascript:void(0)" class="tab-link" data-tab="contact">Contact</a></li>
+      </ul>
       
       <!-- Interactive Theme Toggle Button -->
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode" title="Toggle Dark/Light Mode">
-        <svg class="moon-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-        <svg class="sun-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="moon-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg class="sun-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
       </button>
     </div>
   </nav>
@@ -58,7 +56,7 @@
             I am a 3rd-year Information Technology student focusing on core software development, web technologies, and version control workflows. I am looking to build practical technical experience through developer internships and collaborative software projects.
           </p>
 
-          <!-- Moving Marquee -->
+          <!-- Clean Horizontal Marquee -->
           <div class="marquee-container">
             <div class="marquee-track">
               <div class="tech-icon-item" title="HTML5"><i class="devicon-html5-plain colored"></i></div>
@@ -232,7 +230,6 @@
 
   <!-- JavaScript for Tab Switching, Dark Mode, and Typing Animation -->
   <script>
-    // Tab Navigation Logic
     const tabLinks = document.querySelectorAll('.tab-link');
     const tabContents = document.querySelectorAll('.tab-content');
 
@@ -256,7 +253,6 @@
       });
     });
 
-    // Dark Mode Toggle Logic
     const themeToggleBtn = document.getElementById('themeToggle');
     const currentTheme = localStorage.getItem('theme');
 
@@ -273,7 +269,6 @@
       localStorage.setItem('theme', theme);
     });
 
-    // Dynamic Typing Effect Animation
     const phrases = [
       " an IT Undergraduate Student",
       " a Web Developer",
@@ -300,12 +295,12 @@
       let typingSpeed = isDeleting ? 40 : 80;
 
       if (!isDeleting && charIndex === currentPhrase.length) {
-        typingSpeed = 2000; // Pause at end of phrase
+        typingSpeed = 2000;
         isDeleting = true;
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         phraseIndex = (phraseIndex + 1) % phrases.length;
-        typingSpeed = 500; // Pause before typing next phrase
+        typingSpeed = 500;
       }
 
       setTimeout(typeEffect, typingSpeed);

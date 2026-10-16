@@ -15,7 +15,15 @@
 </head>
 <body>
 
-  <!-- Top Sticky Navbar (Exact Reference Alignment) -->
+  <!-- Loading Screen Animation -->
+  <div id="page-loader" class="loader-wrapper">
+    <div class="loader-content">
+      <div class="loader-spinner"></div>
+      <p class="loader-text">Loading Portfolio...</p>
+    </div>
+  </div>
+
+  <!-- Top Sticky Navbar -->
   <nav class="top-navbar">
     <div class="nav-container">
       <a href="javascript:void(0)" class="nav-logo tab-link active" data-tab="home">Portfolio</a>
@@ -228,8 +236,15 @@
 
   </div>
 
-  <!-- JavaScript for Tab Switching, Dark Mode, and Typing Animation -->
+  <!-- JavaScript for Loader, Tab Switching, Dark Mode, and Typing Animation -->
   <script>
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('page-loader');
+      setTimeout(() => {
+        loader.classList.add('loader-hidden');
+      }, 400);
+    });
+
     const tabLinks = document.querySelectorAll('.tab-link');
     const tabContents = document.querySelectorAll('.tab-content');
 

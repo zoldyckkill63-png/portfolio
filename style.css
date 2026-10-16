@@ -61,7 +61,58 @@ body {
 }
 
 /* ==========================================================================
-   2. TOP STICKY NAVBAR (EXACT REFERENCE CENTERING)
+   2. LOADING SCREEN ANIMATION STYLES
+   ========================================================================== */
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.loader-spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid var(--border-color);
+  border-top: 3px solid var(--role-color);
+  border-radius: 50%;
+  animation: spinLoader 0.8s linear infinite;
+}
+
+.loader-text {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+@keyframes spinLoader {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   3. TOP STICKY NAVBAR
    ========================================================================== */
 .top-navbar {
   position: sticky;
@@ -159,7 +210,7 @@ body.dark-mode .moon-icon { display: none; }
 body.dark-mode .sun-icon { display: block; color: #fbbf24; }
 
 /* ==========================================================================
-   3. SINGLE-PAGE CONTENT WRAPPER
+   4. SINGLE-PAGE CONTENT WRAPPER
    ========================================================================== */
 .site-wrapper {
   max-width: var(--max-width);
@@ -192,7 +243,7 @@ body.dark-mode .sun-icon { display: block; color: #fbbf24; }
 }
 
 /* ==========================================================================
-   4. HERO SECTION (SPLIT SCREEN ALIGNMENT)
+   5. HERO SECTION
    ========================================================================== */
 .hero-section {
   display: grid;
@@ -261,7 +312,7 @@ body.dark-mode .sun-icon { display: block; color: #fbbf24; }
   margin-bottom: 20px;
 }
 
-/* Constrained Clean Marquee */
+/* Marquee */
 .marquee-container {
   width: 100%;
   max-width: 420px;
@@ -308,7 +359,7 @@ body.dark-mode .sun-icon { display: block; color: #fbbf24; }
   color: var(--role-color);
 }
 
-/* Typing Cursor Animation */
+/* Typing Cursor */
 .typing-cursor {
   font-weight: 600;
   color: var(--role-color);
@@ -328,7 +379,7 @@ body.dark-mode .sun-icon { display: block; color: #fbbf24; }
 }
 
 /* ==========================================================================
-   5. BUTTONS
+   6. BUTTONS
    ========================================================================== */
 .btn {
   font-family: var(--font-sans);
@@ -354,7 +405,7 @@ body.dark-mode .sun-icon { display: block; color: #fbbf24; }
 .btn-outline:hover { background-color: var(--card-bg); }
 
 /* ==========================================================================
-   6. INNER PAGE SECTIONS
+   7. INNER PAGE SECTIONS
    ========================================================================== */
 .section-heading {
   display: flex;
@@ -545,7 +596,7 @@ body.dark-mode .sun-icon { display: block; color: #fbbf24; }
 }
 
 /* ==========================================================================
-   7. RESPONSIVE MEDIA QUERIES
+   8. RESPONSIVE MEDIA QUERIES
    ========================================================================== */
 @media (max-width: 900px) {
   .nav-container {

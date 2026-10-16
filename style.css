@@ -89,7 +89,7 @@ body {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 24px;
+  gap: 28px;
 }
 
 .nav-links a {
@@ -196,7 +196,6 @@ body.dark-mode .sun-icon {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow: hidden; /* Prevents logo overflow */
 }
 
 .hero-title {
@@ -216,27 +215,27 @@ body.dark-mode .sun-icon {
 }
 
 /* ==========================================================================
-   4. STRAIGHT-LINE MOVING LOGO MARQUEE ANIMATION
+   4. CLEAN HELD-IN-PLACE HORIZONTAL MARQUEE ANIMATION
    ========================================================================== */
 .marquee-container {
   width: 100%;
-  max-width: 520px;
+  max-width: 480px;
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   position: relative;
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
 .marquee-track {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   width: max-content;
-  animation: scrollMarquee 18s linear infinite;
+  animation: scrollMarquee 15s linear infinite;
 }
 
 .marquee-container:hover .marquee-track {
-  animation-play-state: paused; /* Pauses on hover for interactivity */
+  animation-play-state: paused;
 }
 
 @keyframes scrollMarquee {
@@ -249,21 +248,21 @@ body.dark-mode .sun-icon {
 }
 
 .tech-icon-item {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   background: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 10px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   flex-shrink: 0;
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .tech-icon-item:hover {
-  transform: scale(1.15);
+  transform: scale(1.12);
   border-color: var(--role-color);
 }
 
@@ -588,7 +587,7 @@ body.dark-mode .sun-icon {
   }
 
   .marquee-container {
-    margin: 0 auto 20px;
+    margin: 0 auto 18px;
   }
 
   .hero-actions {

@@ -406,6 +406,7 @@ body.dark-mode .sun-icon { display: block; color: #fbbf24; }
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  gap: 8px;
   justify-content: center;
   transition: all 0.2s ease;
   cursor: pointer;
@@ -419,6 +420,10 @@ body.dark-mode .sun-icon { display: block; color: #fbbf24; }
 
 .btn-outline { background-color: transparent; color: var(--text-main); border: 1px solid var(--border-color); }
 .btn-outline:hover { background-color: var(--card-bg); }
+
+.social-btn svg {
+  flex-shrink: 0;
+}
 
 /* ==========================================================================
    7. INNER SECTIONS
